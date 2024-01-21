@@ -9,8 +9,8 @@ class SignInButton extends ConsumerWidget {
     super.key,
   });
 
-  void signIn(WidgetRef ref) {
-    ref.read(authControllerProvider).signInWithGoogle();
+  void signIn(BuildContext context, WidgetRef ref) {
+    ref.read(authControllerProvider).signInWithGoogle(context);
   }
 
   @override
@@ -22,7 +22,7 @@ class SignInButton extends ConsumerWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15))),
         onPressed: () {
-          signIn(ref);
+          signIn(context, ref);
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
